@@ -26,27 +26,79 @@ public class RegistrationService {
         return true;
     }
 
-    private static boolean isValidEmail(String email) {
-        // TODO: implement email validation logic
-        return true;
+    public static boolean isValidEmail(String email) {
+        String emailRegex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+        return email.matches(emailRegex);
     }
-
-    private static boolean isValidPassword(String password) {
-        // TODO: implement password validation logic
-        return true;
+    public static boolean isValidPassword(String password) {
+        if (password.length() < 8) {
+            return false;
+        }
+        boolean hasLowercase = false;
+        boolean hasUppercase = false;
+        boolean hasNumber = false;
+        boolean hasSpecialChar = false;
+        for (int i = 0; i < password.length(); i++) {
+            char ch = password.charAt(i);
+            if (Character.isLowerCase(ch)) {
+                hasLowercase = true;
+            } else if (Character.isUpperCase(ch)) {
+                hasUppercase = true;
+            } else if (Character.isDigit(ch)) {
+                hasNumber = true;
+            } else {
+                hasSpecialChar = true;
+            }
+        }
+        return hasLowercase && hasUppercase && hasNumber && hasSpecialChar;
     }
 
     private static String generateOTP() {
-        // TODO: generate random OTP and return it as a string
-        return "123456";
+        Random random = new Random();
+        int otp = 100000 + random.nextInt(900000);
+        return Integer.toString(otp);
     }
 
     private static void sendOTP(String email, String otp) {
-        // TODO: send OTP to user's email using email service
+        String subject = "OTP for registration";
+        String message = "Your OTP for registration is: " + otp;
+
+        String senderEmail = "your-email@example.com"; // replace with your own email address
+        String senderPassword = "your-email-password"; // replace with your own email password
+
+        Properties properties = new Properties();
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.host", "smtp.gmail.com"); // replace with your own SMTP server address
+        properties.put("mail.smtp.port", "587"); // replace with your own SMTP server port
+
+        Session session = Session.getInstance(properties, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(senderEmail, senderPassword);
+            }
+        });
+
+        try {
+            Message emailMessage = new MimeMessage(session);
+            emailMessage.setFrom(new InternetAddress(senderEmail));
+            emailMessage.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
+            emailMessage.setSubject(subject);
+            emailMessage.setText(message);
+
+            Transport.send(emailMessage);
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
     }
 
+
     private static boolean waitForOTP(String email, String expectedOTP) {
-        // TODO: wait for user to enter OTP and return true if it matches expectedOTP
-        return true;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter OTP sent to " + email + ": ");
+        String enteredOTP = scanner.nextLine();
+
+        return enteredOTP.equals(expectedOTP);
     }
-}
+
