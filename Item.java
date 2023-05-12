@@ -1,94 +1,86 @@
-/**
- * The Item class represents a product in the catalog.
- * It contains information about the product, such as its name, category, description, brand, price, and discount.
- */
-public class Item {
-    private String name; // The name of the item.
-    private String category; // The category of the item.
-    private String description; // The description of the item.
-    private String brand; // The brand of the item.
-    private double price; // The price of the item.
-    private double discount; // The discount percentage of the item.
+public class Item<price> {
+    // Class variables
+    private String name;
+    private String category;
+    private String description;
+    private String brand;
+    private double price;
+    private double discountPercentage;
 
-    /**
-     * Constructor for creating a new Item object.
-     *
-     * @param name        The name of the item.
-     * @param category    The category of the item.
-     * @param description The description of the item.
-     * @param brand       The brand of the item.
-     * @param price       The price of the item.
-     * @param discount    The discount percentage of the item.
-     */
-    public Item(String name, String category, String description, String brand, double price, double discount) {
+    // Constructor for the Item class
+    public Item(String name, String category, String description,String brand,double price,double discountPercentage) {
+        // Set class variables
         this.name = name;
         this.category = category;
         this.description = description;
         this.brand = brand;
         this.price = price;
-        this.discount = discount;
+        this.discountPercentage = discountPercentage;
     }
 
-    /**
-     * Getter method for the name of the item.
-     *
-     * @return The name of the item.
-     */
+    // Getter method for the 'name' variable
     public String getName() {
         return name;
     }
 
-    /**
-     * Getter method for the category of the item.
-     *
-     * @return The category of the item.
-     */
+    // Setter method for the 'name' variable
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter method for the 'category' variable
     public String getCategory() {
         return category;
     }
 
-    /**
-     * Getter method for the description of the item.
-     *
-     * @return The description of the item.
-     */
+    // Setter method for the 'category' variable
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    // Getter method for the 'description' variable
     public String getDescription() {
         return description;
     }
 
-    /**
-     * Getter method for the brand of the item.
-     *
-     * @return The brand of the item.
-     */
+    // Setter method for the 'description' variable
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    // Getter method for the 'brand' variable
     public String getBrand() {
         return brand;
     }
 
-    /**
-     * Getter method for the price of the item.
-     *
-     * @return The price of the item.
-     */
+    // Setter method for the 'brand' variable
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    // Getter method for the 'price' variable
     public double getPrice() {
         return price;
     }
 
-    /**
-     * Getter method for the discount percentage of the item.
-     *
-     * @return The discount percentage of the item.
-     */
-    public double getDiscount() {
-        return discount;
+    // Setter method for the 'price' variable
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    /**
-     * Calculates the discounted price of the item based on the discount percentage.
-     *
-     * @return The discounted price of the item.
-     */
+    // Getter method for the 'discountPercentage' variable
+    public double getDiscountPercentage() {
+        return discountPercentage;
+    }
+
+    // Setter method for the 'discountPercentage' variable
+    public void setDiscountPercentage(double discountPercentage) {
+        this.discountPercentage = discountPercentage;
+    }
+
+    // Method to calculate the discounted price of the item
     public double getDiscountedPrice() {
-        return price * (1 - discount/100);
+        double discountedPrice = price - (price * (discountPercentage / 100.0));
+        return discountedPrice;
     }
 }
