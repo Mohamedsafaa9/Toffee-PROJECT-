@@ -1,0 +1,62 @@
+name,category,description,brand,price,discount
+English Toffee , Candy,Delicious buttery toffee with a hint of vanilla,Toffee Treat,$9.99,0.03
+Chocolate Chip Cookies,Desserts,Soft and chewy cookies with chocolate chips,Chips Ahoy!,3.49,0.05
+Toffee Delight, Confectionery, A rich and creamy toffee candy that will leave you craving for more, Sweet Treats, 3.99 ,0.03
+Salted Caramel Toffee, Confectionery a sweet and salty toffee candy with a luscious caramel flavor, Gourmet Delights, 5.99 ,0.2
+Dark Chocolate Toffee,confectionery, A decadent toffee candy covered in rich dark chocolate, Choco Delight, 6.99,null
+Almond Toffee, Confectionery, A crunchy toffee candy with roasted almonds for a nutty twist, Nutty Treats, 4.49 ,null
+Milk Chocolate Toffee,Candy,Sweet milk chocolate covered toffee bits,Mackinac Fudge Shop,5.99,0.1
+Hazelnut Toffee,Candy,Toffee with crunchy hazelnuts coated in milk chocolate,SweetGourmet,8.99,0.1
+Coffee Toffee,Candy,Toffee infused with coffee flavor,Cheryl's Cookies,6.99,0.05
+Peanut Butter Toffee,Candy,Toffee with creamy peanut butter flavor,Heath,4.99,0.1
+Lemon Toffee,Candy,Toffee with a tangy lemon flavor,The Toffee House,10.99,0.2
+Dark Chocolate Toffee, Toffee, Rich dark chocolate covered toffee,Candy Co,  12.99,  0.0
+Mint Toffee, Toffee,Buttery toffee with a refreshing mint flavor,Sweets & Treats,  9.99,  0.0
+Peanut Butter  Toffee, Smooth peanut butter flavor with crunchy toffee bits,Candy Castle, 8.99,0.1
+Cinnamon Toffee,Toffee,Warm and spicy cinnamon flavored toffee,Sweet Treats Inc,  7.99,  0.0
+Butterscotch Toffee,Classic butterscotch flavored toffee,The Toffee Shoppe,  10.99,  0.2
+ Hazelnut Toffee,Toffee,Roasted hazelnuts mixed with buttery toffee,Nuts & Sweets,  11.99,0.0
+ Almond Toffee, Toffee,  "Crunchy toffee with whole roasted almonds",  Candy Castle,  8.99,  0.1
+Coconut Toffee ,Toffee, Toffee with a tropical twist of coconut,Sweet Treats Inc, 7.99,  0.0
+ Cherry Toffe,Toffee,Sweet toffee with a hint of tart cherry flavor,The Toffee Shoppe,  10.99,0.2
+ Espresso Toffee,Toffee,Rich coffee flavor mixed with buttery toffee,Nuts & Sweets,  11.99,0.0
+Ginger Toffee,Toffee,Spicy ginger flavored toffee, Candy,  12.99,  0.0
+Raspberry Toffee,Toffee,Toffee with a fruity twist of raspberry,Sweets & Treats,  9.99, 0.0
+ maple Toffee,Toffee,Syrupy sweet maple flavored toffee, Candy Castle,8.99,0.1
+Pistachio Toffee,Toffee,  "Crunchy toffee with whole roasted pistachios", "Sweet Treats Inc,  7.99, 0.0
+Snickers, Candy, Chewy chocolate candy, Mars, 1.50
+Kit Kat, Candy, Crisp wafer fingers covered in milk chocolate, Nestle, 1.25
+M&M's, Candy, Milk chocolate with colorful candy shell, Mars, 1.00
+Skittles, Candy, Fruit-flavored chewy candy, Mars, 0.75
+Nerds, Candy, Tiny crunchy candy pieces in various fruit flavors, Nestle, 0.50
+Twizzlers, Candy, Licorice candy twists, Hershey's, 0.75
+Butterfinger, Candy, Crispy peanut butter candy bar, Nestle, 1.25
+Hershey's Kisses, Candy, Milk chocolate bite-sized candies, Hershey's, 1.00
+Milky Way, Candy, Chocolate nougat and caramel covered in milk chocolate, Mars, 1.25
+Almond Joy, Candy, Coconut and almond candy bar covered in milk chocolate, Hershey's, 1.50
+Baby Ruth, Candy, Chocolate-covered peanuts, caramel, and nougat, Nestle, 1.25
+Heath, Candy, Toffee candy bar covered in milk chocolate, Hershey's, 1.50
+Snickers Almond, Candy, Chewy chocolate candy with almonds, Mars, 1.50
+PayDay, Candy, Peanut caramel candy bar, Hershey's, 1.25
+Reese's Pieces, Candy, Peanut butter candy coated in a candy shell, Hershey's, 1.00
+3 Musketeers, Candy, Whipped chocolate nougat covered in milk chocolate, Mars, 1.25
+Starburst, Candy, Fruit-flavored chewy candy, Mars, 0.75
+Toblerone, Candy, Milk chocolate with honey and almond nougat, Mondelez International, 2.50
+York Peppermint Pattie, Candy, Mint-flavored patty covered in dark chocolate, Hershey's, 1.25
+Mike and Ike, Candy, Fruit-flavored chewy candy, Just Born, 0.75
+Jolly Rancher, Candy, Hard fruit-flavored candy, Hershey's, 0.50
+Dots, Candy, Fruit-flavored chewy candy, Tootsie Roll Industries, 0.75
+Red Vines, Candy, Licorice candy twists, American Licorice Company, 0.75
+Werther's Original, Candy, Hard caramel candy, Storck, 1.50
+Skor, Candy, Butter toffee candy bar covered in milk chocolate, Hershey's, 1.50
+Life Savers, Candy, Hard fruit-flavored candy with a hole in the middle, Mars, 0.75
+Reese's Fast Break, Candy, Peanut butter nougat candy bar covered in milk chocolate, Hershey's, 1.50
+Rolo, Candy, Chewy caramel candy covered in milk chocolate, Nestle, 1.25
+Hershey's Gold, Candy, Caramelized creme with pretzel bits, peanuts, and other ingredients, Hershey's, 1.50
+Gobstopper, Candy, Hard candy that changes colors and flavors, Nestle, 0.50,0.0
+
+
+
+
+
+

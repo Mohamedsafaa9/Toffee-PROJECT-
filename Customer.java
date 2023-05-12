@@ -1,14 +1,20 @@
-public class User {
+public class Customer {
+    private String name;
     private String email;
     private String password;
     private String address;
     private int loyaltyPoints;
 
-    public User(String email, String password, String address) {
+    public Customer(String name, String email, String password, String address) {
+        this.name = name;
         this.email = email;
         this.password = password;
         this.address = address;
         this.loyaltyPoints = 0;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getEmail() {
@@ -29,12 +35,5 @@ public class User {
 
     public void addLoyaltyPoints(int points) {
         loyaltyPoints += points;
-    }
-
-    public boolean authenticate(String password) {
-        return this.password.equals(password);
-    }
-
-    public void suspend() {
     }
 }
