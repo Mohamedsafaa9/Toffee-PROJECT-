@@ -1,51 +1,82 @@
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Order {
     private int orderId;
-    private Customer customer;
+    private LocalDateTime orderDateTime;
+    private User user;
     private List<Item> items;
-    private Date orderDate;
-    private String shippingAddress;
-    private String paymentMethod;
-    private int loyaltyPointsUsed;
+    private double totalAmount;
+    private boolean paidOnDelivery;
+    private boolean isClosed;
 
-    public Order(int orderId, Customer customer, List<Item> items, String shippingAddress, String paymentMethod, int loyaltyPointsUsed) {
+    /*
+      Constructor for the Order class.
+      orderId the unique identifier for the order.
+      user the user who placed the order.
+      items the list of items ordered in the order.
+      totalAmount the total amount of the order.
+      paidOnDelivery whether the order is to be paid on delivery.
+     */
+    public Order(int orderId, User user, List<Item> items, double totalAmount, boolean paidOnDelivery) {
         this.orderId = orderId;
-        this.customer = customer;
+        this.orderDateTime = LocalDateTime.now();
+        this.user = user;
         this.items = new ArrayList<>(items);
-        this.orderDate = new Date();
-        this.shippingAddress = shippingAddress;
-        this.paymentMethod = paymentMethod;
-        this.loyaltyPointsUsed = loyaltyPointsUsed;
+        this.totalAmount = totalAmount;
+        this.paidOnDelivery = paidOnDelivery;
+        this.isClosed = false;
     }
 
+    // Getters and setters
     public int getOrderId() {
         return orderId;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public LocalDateTime getOrderDateTime() {
+        return orderDateTime;
+    }
+
+    public User getUser() {
+        return user;
     }
 
     public List<Item> getItems() {
         return items;
     }
 
-    public Date getOrderDate() {
-        return orderDate;
+    public double getTotalAmount() {
+        return totalAmount;
     }
 
-    public String getShippingAddress() {
-        return shippingAddress;
+    public boolean isPaidOnDelivery() {
+        return paidOnDelivery;
     }
 
-    public String getPaymentMethod() {
-        return paymentMethod;
+    public boolean isClosed() {
+        return isClosed;
     }
 
-    public int getLoyaltyPointsUsed() {
-        return loyaltyPointsUsed;
+    public void setClosed(boolean closed) {
+        isClosed = closed;
     }
+
+// Other methods
+    /*
+      Adds an item to the order.
+       item the item to be added.
+     */
+    public void addItem(Item item) {
+        items.add(item);
+    }
+
+    /*
+     * Removes an item from the order.
+     *  item the item to be removed.
+     */
+    public void removeItem(Item item) {
+        items.remove(item);
+    }
+
 }

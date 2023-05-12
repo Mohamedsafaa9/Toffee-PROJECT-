@@ -1,44 +1,40 @@
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // Use try-with-resources to ensure that the Scanner object is properly closed.
-        try (Scanner scanner = new Scanner(System.in)) {
-            // Ask user for registration information
-            System.out.print("Enter email for registration: ");
-            String registrationEmail = scanner.nextLine();
-            System.out.print("Enter password for registration: ");
-            String registrationPassword = scanner.nextLine();
-            System.out.print("Enter address for registration: ");
-            String registrationAddress = scanner.nextLine();
+        // Create a new user
+        User user = new User(2,"John", "Doe", "johndoe@gmail.com","ewrfew");
 
-            // Attempt registration
-            boolean isRegistered = RegistrationService.register(registrationEmail, registrationPassword, registrationAddress);
-            if (isRegistered) {
-                System.out.println("Registration successful!");
-            } else {
-                System.out.println("Registration failed.");
-                return;
-            }
+        // Create some items
+        Item item1 = new Item("Chocolate Chip Cookies", "Desserts", "Soft and chewy cookies with chocolate chips","Chips Ahoy",3.49,0.00);
+        Item item2 = new Item("Milk Chocolate", "Candy", "Sweet milk chocolate covered toffee bits,Mackinac Fudge Shop","Mackinac Fudge Sho",5.99,0.03);
+        Item item3 = new Item("Dark Chocolate", "Toffee,", " Rich dark chocolate covered toffee","Candy",12.99,0.16);
 
-            // Ask user for login information
-            System.out.print("Enter email for login: ");
-            String loginEmail = scanner.nextLine();
-            System.out.print("Enter password for login: ");
-            String loginPassword = scanner.nextLine();
+        // Create an order
+        List<Item> items = new ArrayList<>(); // Create an empty list to hold the order items
+        items.add(item1); // Add the first item to the list
+        items.add(item2); // Add the second item to the list
+        Order order = new Order(1, user, items, 30.0, false); // Create the order with the user, items, and total amount
 
-            // Attempt login
-            User user = LoginService.login(loginEmail, loginPassword);
+        // Add another item to the order
+        order.addItem(item3);
 
-            if (user != null) {
-                System.out.println("Login successful!");
-                System.out.println("Welcome, " + user.getEmail() + "!");
-            } else {
-                System.out.println("Login failed.");
-            }
-        } catch (Exception e) {
-            // Handle any exceptions that might occur
-            System.out.println("An error occurred: " + e.getMessage());
+        // Remove an item from the order
+        order.removeItem(item2);
+
+        // Print the order details
+        System.out.println("Order ID: " + order.getOrderId());
+        System.out.println("Order Date and Time: " + order.getOrderDateTime());
+        System.out.println("User: " + order.getUser().getFirstName() + " " + order.getUser().getLastName());
+        System.out.println("Items:");
+        for (Item item : order.getItems()) { // Loop through the items in the order and print their names and prices
+            System.out.println("- " + item.getName() + " (" + item.getPrice() + ")");
         }
+        System.out.println("Total Amount: " + order.getTotalAmount()); // Print the total amount of the order
+        System.out.println("Paid On Delivery: " + order.isPaidOnDelivery()); // Print whether the order is paid on delivery or not
+        System.out.println("Order Status: " + OrderStatus.NEW); // Print the order status
+        System.out.println("Payment Method: " + PaymentMethod.CREDIT_CARD); // Print the payment method
     }
 }
