@@ -8,7 +8,7 @@ public class Item<price> {
     private double discountPercentage;
 
     // Constructor for the Item class
-    public Item(String name, String category, String description,String brand,double price,double discountPercentage) {
+    public Item(String name, double price) {
         // Set class variables
         this.name = name;
         this.category = category;
