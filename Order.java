@@ -1,59 +1,69 @@
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
+/*
+ * The Order class represents an order made by a customer.
+ */
 public class Order {
-    private int orderId;
-    private Customer customer;
-    private List<Item> items;
-    private Date orderDate;
-    private String shippingAddress;
-    private String paymentMethod;
-    private int loyaltyPointsUsed;
-// Constructor for the Order class
+    private ArrayList<Item> items;
+    private boolean isPaid;
+    private boolean isDelivered;
 
-    public Order(int orderId, Customer customer, List<Item> items, String shippingAddress, String paymentMethod, int loyaltyPointsUsed) {
-        this.orderId = orderId;
-        this.customer = customer;
-        this.items = new ArrayList<>(items);
-        this.orderDate = new Date();
-        this.shippingAddress = shippingAddress;
-        this.paymentMethod = paymentMethod;
-        this.loyaltyPointsUsed = loyaltyPointsUsed;
+    /*
+      Constructs a new Order object with an empty list of items.
+     */
+    public Order() {
+        items = new ArrayList<Item>();
+        isPaid = false;
+        isDelivered = false;
     }
-// Getter method for orderId
 
-    public int getOrderId() {
-        return orderId;
+    /*
+     * Adds an item to the order.
+       The item to add.
+     */
+    public void addItem(Item item) {
+        items.add(item);
     }
-// Getter method for customer
 
-    public Customer getCustomer() {
-        return customer;
+    /*
+     * Calculates the total price of all items in the order.
+     * return The total price of the order.
+     */
+    public double calculateTotal() {
+        double total = 0.0;
+        for (Item item : items) {
+            total += item.getPrice();
+        }
+        return total;
     }
-// Getter method for items
 
-    public List<Item> getItems() {
-        return items;
+    /*
+     * Marks the order as paid.
+     */
+    public void markAsPaid() {
+        isPaid = true;
     }
-// Getter method for orderDate
 
-    public Date getOrderDate() {
-        return orderDate;
+    /*
+     * Marks the order as delivered.
+     */
+    public void markAsDelivered() {
+        isDelivered = true;
     }
-// Getter method for shippingAddress
 
-    public String getShippingAddress() {
-        return shippingAddress;
+    /*
+     * true if the order has been paid for.
+     True if the order has been paid for, false otherwise.
+     */
+    public boolean isPaid() {
+        return isPaid;
     }
-// Getter method for paymentMethod
 
-    public String getPaymentMethod() {
-        return paymentMethod;
-    }
-// Getter method for loyaltyPointsUsed
-
-    public int getLoyaltyPointsUsed() {
-        return loyaltyPointsUsed;
+    /*
+      Returns true if the order has been delivered.
+      return True if the order has been delivered, false otherwise.
+     */
+    public boolean isDelivered() {
+        return isDelivered;
     }
 }
